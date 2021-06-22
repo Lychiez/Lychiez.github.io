@@ -2,102 +2,253 @@
 
 <html>
     <head>
-        <meta charset = "utf-8">
-        <title> Crystal Solve</title>
-        <style> 
-        
-        h2 {
-            color: rgb(16, 173, 48);
-            font-family: "cursive", sans-serif;
-            font-size: 1.4em;
-        }
-        body {
-            background-color: rgb(144, 195, 230);
-            font-size: 18px;
-            text-align: center;
-        }
-        p {
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-        #world-record-time {
-            color: rgb(212, 241, 83);
-        }
-        .instructions {
-            color: rgb(131, 15, 106);
-            font-style: italic;
-        }
-        #intro {
-            color:rgb(102, 16, 173);
-            font-weight: bold;
-        }
-        .fastest-solves {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
+        <meta charset= "utf-8">
+        <title>Crystal Solve</title>
+        <style>
+            header {
+                color: white;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                background-color: #161b22;
+                position: fixed;
+                left: 0;
+                right: 0;
+                top:0;
+                height: 55px;
+                display: flex;
+                align-items: center;
+                font-size: larger;
+            }
+            header * {
+                display: inline;
+            }
+            header li {
+                margin: 20px;
+            }
+            #section-one {
+                padding: 10px 0px 40px 30px;
+                background-color: #0d1117;
+                font-size: 1.5em;
+            }
+            #section-one p {
+                font-size: 20px;
+            }
+            #header-img {
+                position: absolute;
+                right: 30%;
+                width: 250px;
+                top: 60px;
+            }
+            #notation-img {
+                padding: 10px;
+            }
+            body {
+                color: white;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                background-color: #090c10;
+            }
+            #main {
+                margin-left: auto;
+                margin-right: auto;
+                width: 65%;
+            }
+            footer {
+                background-color: #0d1117;
+                position:relative;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 55px;
+                display: flex;
+                align-items: center;
+                font-size: larger;
+            }
+            footer * {
+                display: inline;
+            }
+            footer li {
+                margin: 20px;
+            }
+            a:link, a:visited {
+                color: white;
+                text-decoration: none;
+            }
+            a:hover {
+                color:beige;
+                text-decoration: none;
+            }
         </style>
     </head>
     <body>
+        <header>
+        <nav>
+            <ul>
+                <lh><strong><em>Jump around:</em></strong></lh>
+                <li><a href = "#intro"> Intro</a></li>
+                <li><a href = "#pieces"> Pieces</a></li>
+                <li><a href = "#notation"> Notation</a></li>
+                <li><a href = "#solving">Solving</a></li>
+                <li><a href = "#conclusion">Conclusion</a></li>
+            </ul>
+        </nav>
+        </header>
 
-        <!-- This is a random comment-->
-        <h1> How to solve a Rubik's Cube</h1>
+        <section id = "section-one">
+            <h1><br><br>6 Easy Steps: How to Solve <br> a 3x3 Rubik's Cube</h1>
+            <p>Author: Anthony Chuang <img id = "header-img" src = "https://i.pinimg.com/originals/08/05/a8/0805a8f92d5f8a31a15587859b965264.png"
+                alt = "Rubik's Cube image"></p>
+        </section>
 
-        <a href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-        <img src = "https://www.rubiks.com/static/version1607342405/frontend/Bestresponse/rubiks/en_GB/images/success_rubiks_popup.png" alt = "3x3 Rubik's Cube" width = "250">  
-        </a>
+        <main id = "main">
+        <div id = "intro">
+            <br><br>
+            <h3>Introduction</h3>
+            <p>Solving a 3x3 Rubik's Cube isn't as hard as it looks. In fact, here at Crystal Solve, anyone can learn to solve a cube with 6 simple steps.
+                However, its helpful to first become familiar with cube notation in order to quickly learn certain algorithms. But don't worry! There are 
+                only a few algorithms needed for this method, dubbed the "crystal method".
+            </p>
+        </div>
+        <br><br>
+        <div id = "pieces">
+            <h3>Pieces</h3>
+            <p>There are three different pieces that make up the cube:</p>
+            <ol>
+                <li>Center piece</li>
+                <li>Edge piece</li>
+                <li>Corner piece</li>
+            </ol>
 
-        <br><a target = "_blank" href = "https://www.rubiks.com/en-us/">Rubik's Cube Official Website</a>
+            <p><strong>Center pieces</strong> cannot be moved, and the color determines the side. There are 6 center pieces.</p>
+            <img src = "https://getgocube.com/wp-content/themes/astra/assets/images/how-post-centerpiece.png" alt = "center pieces of the cube">
+            <p><strong>Edge pieces</strong> can be moved, and two sides share the same center piece. There are 12 edge pieces.</p>
+            <img src = "https://getgocube.com/wp-content/uploads/2020/12/Artboard20120copy2012-300x300.png" alt = "edge pieces of the cube" width = 150px>
+            <p><strong>Corner pieces</strong> can be moved, and 3 sides share the same corner piece. There are 8 corner pieces</p>
+            <img src = "https://getgocube.com/wp-content/uploads/2020/12/Artboard20120copy2013-300x300.png" alt = "corner pieces of the cube" width = 150px>
+        </div>
+        <br><br>
+        <div id = "notation">
+            <h3>Notation</h3>
+            <p>There are different turns or <em>actions</em> you can do with a cube, and these actions are compiled together called <em>notations.</em><br></p>
+            <img id = "notation-img" src = "https://getgocube.com/wp-content/uploads/2020/12/faces-01-600x600.png" alt = "cube notation" width = 250px>
 
-        <p id = "intro">The rubik's cube is a cube that is rlly cool. It looks like a potato. As you can tell this is 
-            completely random text that has no relevance whatsoever. I wonder if this is bolded correctly.
-        </p>
+            <li><strong>U</strong>: rotate the up face of the cube clockwise</li>
+            <li><strong>D</strong>: rotate the down face of the cube clockwise</li>
+            <li><strong>R</strong>: rotate the right face of the cube clockwise</li>
+            <li><strong>L</strong>: rotate the left face of the cube clockwise</li>
+            <li><strong>F</strong>: rotate the front face of the cube clockwise</li>
+            <li><strong>B</strong>: rotate the back face of the cube clockwise</li>
+            <li><strong>'</strong>: rotate it counterclockwise instead of clockwise</li>
+            <li><strong>2</strong>: rotate it two times</li>
 
-        <h2>Types of Methods Covered:</h2>
-        <ul>
-            <li><a href = "#nub-method">Nub Method</a></li>
-            <li><a href = "#pog-method">Pog Method</a></li>
-        </ul>
-        <h2 id = "nub-method">Nub Method</h2>
-            <h3>Step 1: White Cross</h3>
-                <p class = "instructions">First, you must complete the <em>white cross. </em>To do this, <strong>eat pizza</strong></p>
-            <h3>Step 2: White Corners</h3>
-                <p class = "instructions">Second, you must find the white corners. </p>
-        <h2 id = "pog-method">Pog Method</h2>
+            <p><a href = "https://solvethecube.com/notation" target = "_blank"><u>SolveTheCube</u></a> is a great site for learning notation.</p>
+        </div>
+        <br><br>
+        <div id = "solving">
+            <div id = "step-one">
+                <h3>Solving a 3x3</h3>
+                <h4>Step 1: White Cross</h4>
+                <p>To solve the white cross, you must first find the white center piece, and align all the edge pieces
+                    on the white side. This step is intuitive, and after practicing, you can cut lots of time on this step.</p>
+                
+                <div class="youtube">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/kAaHVlXV3TU" title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div id = "step-two">
+                <h4>Step 2: Solving the first layer</h4>
+                <p>To solve finish the first layer, you just have to slide the white corners into place. First align the edge in the bottom
+                    layer so that either side is matched with its corresponding center piece. Then, if the corner piece is on the right side, 
+                    do the first algorithm, and if its on the left, do the second algorithm. 
+                </p>
+                <p>Algorithms Needed:<br><strong>DR'D'R</strong><br><strong>D'LDL'</strong></p>
 
-        <h3>Fastest 3x3 Solves:</h3>
-        <ol>
-            <li id = "world-record-time">Yusheng Du: 3.47</li>
-            <li>Feliks Zemdegs: 4.22</li>
-            <li>SeungBeom Cho: 4.59</li>
-        </ol>
+                <div class="youtube">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/c1VW0aDffcU" title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div id = "step-three">
+                <h4>Step 3: Solving the second layer</h4>
+                <p>To solve the second layer, you just have to align the edge pieces in the second layer. Start by flipping the cube upside
+                    down so the yellow side is facing up (remember the center piece color determines the side), and the white side is facing
+                    down. Now set up a chosen edge piece. It is best to first do all the ones on the top rather than chose the edge pieces 
+                    in the second layer. So first, align the side color with its corresponding center piece. Now, there are two different cases. 
+                    If the top color is to the right of the aligned piece, do the first algorithm. If it's to the left, do the second algorithm. 
+                    However, if the piece is already in the second layer but oriented incorrectly, then do either the first or second algorithm
+                    (which would move the top piece out), then perform the required algorithm to slide it back in.
+                </p>
+                <p>Algorithms Needed:<br><strong>URU'R'U'F'UF</strong><br><strong>U'F'UFURU'R'</strong></p>
 
-        <h3>Fastest Solves</h3>
+                <div class="youtube">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/HPYLCNsCmMg" title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div id = "step-four">
+                <h4>Step 4: Solving the yellow cross</h4>
+                <p>To solve the yellow cross, you need to align the edge pieces. To do this, you only need to know one algorithm, but there 
+                    are 3 different unsolved cases. <em>*In this step, ignore the corner pieces.*</em>
+                </p>
+                <p>Yellow Dot: If you have a yellow dot, do the algorithm once then go to the yellow L step</p>
+                <p>Yellow L: If you have a yellow L, manipulate the cube so that the L is in the top left corner. Next, do the algorithm once,
+                    and then move onto the Yellow Line step.</p>
+                <p>Yellow line: If you have a yellow line, do the algorithm once to get a yellow cross</p>
 
-        <table class = "fastest-solves">
-            <thead>
-                <tr>
-                    <th>Solver</th>
-                    <th>Type</th>
-                    <th>Time</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Yusheng Du</td>
-                    <td>3x3</td>
-                    <td>3.47</td>
-                </tr>
-                <tr>
-                    <td>Maciej Czapiewski</td>
-                    <td>2x2</td>
-                    <td>0.49</td>
-                </tr>
-                <tr>
-                    <td>Sebastian Weyer</td>
-                    <td>4x4</td>
-                    <td>17.42</td>
-                </tr>
-            </tbody>
-        </table>
+                <p>Algorithms Needed: <br><strong>FRUR'U'F'</strong></p>
+
+                <div class="youtube">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/C5SUoHVYXFw" title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div id = "step-five"> 
+                <h4>Step 5: Solving the yellow side</h4>
+                <p>To solve the yellow side, you need to align the corner pieces. You only need one algorithm to solve the yellow side. 
+                    Start by manuevering the top so the bottom left corner is not yellow. Then do teh algorithm. As soon as the 
+                    corner is yellow on top, do <strong>U'</strong> and continue to do the algorithm over and over again. Repeat until
+                    finished. <em>*Ignore the displacement of the first two layers. The pieces will rearrange themselves by the time 
+                    you finish this step*</em></p>
+                <p>Algorithms Needed:<br><strong>R'DRD'</strong>--repeat until corner is yellow</p>
+
+                <div class="youtube">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/mmRpgHFfP0U" title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div id = "step-six">
+                <h4>Step 6: Solving the Cube</h4>
+                <p>To solve the last layer, you need to identify certain cases, and utilze the corresponding algorithms.<br></p>
+                <p>All different colors on all sides: first algorithm</p>
+                <p>2 edge pieces with the same color on the same side (one side only): Hold the cube so the 2 edge pieces 
+                    are algined with their centerpiece, and then do the first algorithm.</p>
+                <p>All three pieces the same color on the same side (one side only): Align the top layer with matching centerpiece, then 
+                    do first algorithm.</p>
+                <p>Three pieces with the same color on one side only, and 3 other sides have 2 matching edges: </p>
+                <p>Edge piece to the right: second algorithm</p>
+                <p>Edge piece to the left: third algorithm</p>
+
+                <p>Algorithms Needed:<br><strong>R'FR'2B'RF'R'2B'2RU'</strong><br><strong>2FU'LR'2FL'RU'2F</strong><br><strong>2FULR'2FL'RU2F</strong></p>
+
+                <div class="youtube">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/bEjPzUSy_2c" title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div id = "conclusion">
+            <h3>Congratulations, you just solved a Rubik's Cube!</h3>
+        </div>
+        <div class="youtube">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/tFiYvD1KWas" title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        </main>
+
+        <footer id = "footer">
+            <nav>
+
+            </nav>
+        </footer>
     </body>
 </html>
